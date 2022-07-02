@@ -16,6 +16,6 @@ Proprietary or other driver installation (NVIDIA proprietary drivers, AMD propri
 
 Desktop environmet/Window manager selection
 
-Custom ZSTD compression levels during installation for the root and/or other partitions for the OS
+Custom ZSTD compression levels during installation for the root and/or other partitions that use BTRFS for the OS
 
 Bootloader selection (systemd-boot, GRUB, GRUB2, Coreboot, etc.)
