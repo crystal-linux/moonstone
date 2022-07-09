@@ -12,6 +12,5 @@ extra packages selector WITH REPO SELECTIONS FOR Flatpak, System repos, Snap (if
 
 optional podman and/or docker selection, distrobox option shows if the user picks podman and/or docker
 
-Proprietary or other driver installation (NVIDIA proprietary drivers, AMD proprietary drivers, AMDVLK vs RADV, etc.)
 
 
