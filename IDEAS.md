@@ -1,4 +1,4 @@
-Ideas go here
+## Ideas go here
 
 theme/mode selector ✔️
 
@@ -12,5 +12,6 @@ extra packages selector WITH REPO SELECTIONS FOR Flatpak, System repos, Snap (if
 
 optional podman and/or docker selection, distrobox option shows if the user picks podman and/or docker
 
+nvidia driver's
 
-
+more de's to install
