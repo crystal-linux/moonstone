@@ -1,0 +1,6 @@
+data/al.getcryst.moonstone.desktop.in
+data/al.getcryst.moonstone.appdata.xml.in
+data/al.getcryst.moonstone.gschema.xml
+src/main.py
+src/window.py
+src/window.ui
