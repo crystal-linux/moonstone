@@ -2,5 +2,6 @@
 <gresources>
   <gresource prefix="/al/getcryst/moonstone">
     <file preprocess="xml-stripblanks">window.ui</file>
+    <file>images/pc-white.png</file>
   </gresource>
 </gresources>

@@ -1,31 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <requires lib="Adw" version="1.0"/>
-  <template class="MoonstoneWindow" parent="AdwApplicationWindow">
-    <property name="default-width">600</property>
-    <property name="default-height">300</property>
-    <child>
-      <object class="GtkBox">
-        <property name="orientation">vertical</property>
+  <object class="GtkPopover" id="hamburger_menu">
+        <style>
+            <class name="menu"/>
+        </style>
         <child>
-          <object class="GtkHeaderBar" id="header_bar">
-            <child type="end">
-              <object class="GtkMenuButton">
-                <property name="icon-name">open-menu-symbolic</property>
-                <property name="menu-model">primary_menu</property>
+            <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="margin-top">6</property>
+                <property name="margin-bottom">6</property>
+                <property name="margin-start">6</property>
+                <property name="margin-end">6</property>
+                <child>
+                    <object class="GtkModelButton" id="about_button">
+                        <property name="text" translatable="yes">About Moonstone GUI</property>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+  <template class="MoonstoneWindow" parent="GtkApplicationWindow">
+    <property name="title">Moonstone</property>
+    <property name="default-width">800</property>
+    <property name="default-height">600</property>
+    <property name="resizable">false</property>
+    <child type="titlebar">
+      <object class="AdwHeaderBar" id="header_bar">
+        <property name="title-widget">
+          <object class="GtkBox">
+            <child>
+              <object class="AdwCarouselIndicatorDots">
+                <property name="carousel">carousel</property>
+                <property name="orientation">horizontal</property>
               </object>
             </child>
           </object>
+        </property>
+        <child type="end">
+          <object class="GtkMenuButton" id="menu_button">
+            <property name="icon-name">open-menu-symbolic</property>
+            <property name="popover">hamburger_menu</property>
+          </object>
         </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">horizontal</property>
+        <property name="vexpand">true</property>
+        <property name="hexpand">true</property>
         <child>
-          <object class="GtkLabel" id="label">
-            <property name="label">Hello, World!</property>
+          <object class="AdwCarousel" id="carousel">
+            <property name="orientation">horizontal</property>
             <property name="vexpand">true</property>
-            <attributes>
-              <attribute name="weight" value="bold"/>
-              <attribute name="scale" value="2"/>
-            </attributes>
+            <property name="hexpand">true</property>
+            <property name="allow-mouse-drag">false</property>
+            <property name="allow-scroll-wheel">false</property>
+            <property name="allow-long-swipes">false</property>
+            <property name="interactive">false</property>
+            <child>
+              <object class="GtkBox" id="welcome_page">
+                <property name="orientation">vertical</property>
+                <property name="valign">center</property>
+                <property name="halign">center</property>
+                <child>
+                  <object class="GtkImage" id="crystal-pc">
+                    <property name="resource">/al/getcryst/moonstone/images/pc-white.png</property>
+                    <property name="pixel-size">200</property>
+                    <property name="margin-start">200</property>
+                    <property name="margin-end">200</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwStatusPage" id="welcome">
+                      <property name="title" translatable="yes">Welcome to Crystal Linux</property>
+                      <property name="description" translatable="yes">We will now walk you through some of the most important settings on your new Crystal Linux installation!</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">horizontal</property>
+                    <property name="halign">center</property>
+                    <property name="valign">center</property>
+                    <property name="vexpand">true</property>
+                    <property name="hexpand">true</property>
+                    <child>
+                      <object class="GtkButton" id="next_button">
+                        <property name="label">Start</property>
+                        <style>
+                          <class name="suggested-action"/>
+                          <class name="pill"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+              </object>
+            </child>
           </object>
         </child>
       </object>
@@ -34,15 +122,11 @@
   <menu id="primary_menu">
     <section>
       <item>
-        <attribute name="label" translatable="yes">_Preferences</attribute>
-        <attribute name="action">app.preferences</attribute>
-      </item>
-      <item>
-        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="label">Keyboard Shortcuts</attribute>
         <attribute name="action">win.show-help-overlay</attribute>
       </item>
       <item>
-        <attribute name="label" translatable="yes">_About Moonstone</attribute>
+        <attribute name="label">About jade gui</attribute>
         <attribute name="action">app.about</attribute>
       </item>
     </section>

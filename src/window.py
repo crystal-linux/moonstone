@@ -20,10 +20,10 @@ from gi.repository import Adw
 from gi.repository import Gtk
 
 @Gtk.Template(resource_path='/al/getcryst/moonstone/window.ui')
-class MoonstoneWindow(Adw.ApplicationWindow):
+class MoonstoneWindow(Gtk.ApplicationWindow):
     __gtype_name__ = 'MoonstoneWindow'
 
-    label = Gtk.Template.Child()
+   # label = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
